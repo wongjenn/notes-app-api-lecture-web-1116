@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :notes, only: [:index, :create]
+      resources :notes, only: [:index, :create, :update]
     end
   end
 end
+
+# PATCH /api/v1/notes/:id => notes#update
