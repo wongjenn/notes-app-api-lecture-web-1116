@@ -20,6 +20,13 @@ class Api::V1::NotesController < ApplicationController
     render json: note
   end
 
+  def update
+    note = Note.find(params[:id])
+    note.destroy
+    @notes = Note.all
+    render json: @notes
+  end
+
   private
 
   def note_params
